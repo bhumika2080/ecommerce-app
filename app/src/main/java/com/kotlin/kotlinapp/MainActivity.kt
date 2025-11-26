@@ -19,6 +19,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        // Check for cached UUID
+        val sharedPref = getSharedPreferences("AppPrefs", MODE_PRIVATE)
+        val cachedUuid = sharedPref.getString("cached_uuid", null)
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
