@@ -11,14 +11,30 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
+
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
     repositories {
         google()
         mavenCentral()
+
+        // Flutter repositories
+        val storageUrl = System.getenv("FLUTTER_STORAGE_BASE_URL") ?: "https://storage.googleapis.com"
+        maven {
+            url = uri("C:\\extra_projects\\KotlinApp\\flutter_module\\build\\host\\outputs\\repo")
+        }
+        maven {
+            url = uri("$storageUrl/download.flutter.io")
+        }
     }
 }
 
-rootProject.name = "Kotlin App"
+rootProject.name = "KotlinApp"
 include(":app")
- 
+
+val flutterProjectRoot = rootDir.resolve("flutter_module")
+val includeFlutter = File(flutterProjectRoot, ".android/include_flutter.groovy")
+
+if (includeFlutter.exists()) {
+    apply(from = includeFlutter)
+}

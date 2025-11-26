@@ -18,6 +18,9 @@ android {
     }
 
     buildTypes {
+        debug {
+            // Debug configuration
+        }
         release {
             isMinifyEnabled = false
             proguardFiles(
@@ -25,7 +28,11 @@ android {
                 "proguard-rules.pro"
             )
         }
+        create("profile") {
+            initWith(getByName("debug"))
+        }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -39,7 +46,6 @@ android {
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -49,4 +55,9 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    // Flutter dependencies
+    debugImplementation(libs.flutter.debug)
+    add("profileImplementation", "com.example.flutter_module:flutter_profile:1.0")
+    releaseImplementation(libs.flutter.release)
 }
