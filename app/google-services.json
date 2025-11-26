@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "448703035936",
+    "project_id": "responsivekotlin",
+    "storage_bucket": "responsivekotlin.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:448703035936:android:d09fe43691df0d83009a45",
+        "android_client_info": {
+          "package_name": "com.kotlin.kotlinapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgYQi5-wLZxU3msn4JyybuAF7cVOnnoxo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:448703035936:android:2ff740f6d1c5d932009a45",
+        "android_client_info": {
+          "package_name": "com.kotlin.responsivekotlin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgYQi5-wLZxU3msn4JyybuAF7cVOnnoxo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
