@@ -37,20 +37,30 @@ A hybrid Android application demonstrating native Kotlin integration with a Flut
 
 ```
 KotlinApp/
-├── app/                          # Android app module
+├── app/                         
 │   └── src/main/
 │       ├── java/com/kotlin/kotlinapp/
 │       │   ├── MainActivity.kt
+│       │   ├── FlutterFragment.kt
+│       │   ├── FlutterBridgeActivity.kt
 │       │   └── LoginFragment.kt
 │       └── res/
 │           ├── layout/
 │           └── navigation/
-└── flutter_module/               # Flutter module
+└── flutter_module/               
     └── lib/
+        ├── main.dart
         ├── core/
-        │   ├── app_config.dart
-        │   ├── app_config_provider.dart
         │   └── network.dart
+        ├── models/
+        │   ├── app_config.dart
+        │   └── product.dart
+        ├── pages/
+        │   ├── product_detail_page.dart
+        │   └── product_list_page.dart
+        ├── services/
+        │   ├── api_service.dart
+        │   └── native_bridge.dart
         └── features/
             └── products/
                 ├── data/
@@ -74,7 +84,7 @@ KotlinApp/
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/bhumika2080/ecommerce-app
    cd KotlinApp
    ```
 
