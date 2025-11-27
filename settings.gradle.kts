@@ -18,7 +18,6 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
 
-        // Flutter repositories
         val storageUrl = System.getenv("FLUTTER_STORAGE_BASE_URL") ?: "https://storage.googleapis.com"
         maven {
             url = uri("C:\\extra_projects\\KotlinApp\\flutter_module\\build\\host\\outputs\\repo")
