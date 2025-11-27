@@ -1,6 +1,7 @@
 package com.kotlin.kotlinapp
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -30,23 +31,18 @@ class LoginFragment : Fragment() {
             val username = binding.username.text.toString()
             val password = binding.password.text.toString()
 
-            // Basic validation
             if (username.isNotEmpty() && password.isNotEmpty()) {
-                // Generate UUID
                 val uuid = UUID.randomUUID().toString()
 
-                // Save UUID to SharedPreferences
                 val sharedPref = requireActivity().getSharedPreferences("AppPrefs", Context.MODE_PRIVATE)
                 with(sharedPref.edit()) {
                     putString("cached_uuid", uuid)
                     apply()
                 }
 
-                val flutterFragment = FlutterFragment.newInstance(uuid)
-                requireActivity().supportFragmentManager.beginTransaction()
-                    .replace(R.id.nav_host_fragment_content_main, flutterFragment)
-                    .addToBackStack(null)
-                    .commit()
+                val intent = Intent(requireContext(), FlutterBridgeActivity::class.java)
+                startActivity(intent)
+                requireActivity().finish()
                 
                 Toast.makeText(context, "Login successful! UUID: ${uuid.take(8)}...", Toast.LENGTH_SHORT).show()
             } else {
