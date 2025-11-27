@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import com.kotlin.kotlinapp.databinding.FragmentLoginBinding
 import java.util.UUID
 
@@ -43,9 +42,11 @@ class LoginFragment : Fragment() {
                     apply()
                 }
 
-                // TODO: Launch Flutter module
-                // For now, navigate to FirstFragment as placeholder
-                findNavController().navigate(R.id.action_LoginFragment_to_FirstFragment)
+                val flutterFragment = FlutterFragment.newInstance(uuid)
+                requireActivity().supportFragmentManager.beginTransaction()
+                    .replace(R.id.nav_host_fragment_content_main, flutterFragment)
+                    .addToBackStack(null)
+                    .commit()
                 
                 Toast.makeText(context, "Login successful! UUID: ${uuid.take(8)}...", Toast.LENGTH_SHORT).show()
             } else {
