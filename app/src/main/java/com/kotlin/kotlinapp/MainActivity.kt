@@ -19,10 +19,9 @@ class MainActivity : AppCompatActivity() {
         val sharedPref = getSharedPreferences("AppPrefs", MODE_PRIVATE)
         val cachedUuid = sharedPref.getString("cached_uuid", null)
 
-      if (cachedUuid != null) {
+        if (cachedUuid != null) {
             val intent = Intent(this, FlutterBridgeActivity::class.java)
             startActivity(intent)
-            finish()
             return
         }
 

@@ -42,8 +42,7 @@ class LoginFragment : Fragment() {
 
                 val intent = Intent(requireContext(), FlutterBridgeActivity::class.java)
                 startActivity(intent)
-                requireActivity().finish()
-                
+
                 Toast.makeText(context, "Login successful! UUID: ${uuid.take(8)}...", Toast.LENGTH_SHORT).show()
             } else {
                 Toast.makeText(context, "Please enter username and password", Toast.LENGTH_SHORT).show()

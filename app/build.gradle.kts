@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "com.kotlin.kotlinapp"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.kotlin.kotlinapp"
         minSdk = 33
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -55,8 +55,6 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-
-    // Flutter dependencies
     debugImplementation(libs.flutter.debug)
     add("profileImplementation", "com.example.flutter_module:flutter_profile:1.0")
     releaseImplementation(libs.flutter.release)
